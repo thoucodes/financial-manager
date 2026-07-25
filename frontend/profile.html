@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Finance App</title>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <div class="logo"></div>
+                    <h2>FinanceApp</h2>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="dashboard.html" class="nav-item">Dashboard</a>
+                    <a href="transaction.html" class="nav-item">Transactions</a>
+                    <a href="profile.html" class="nav-item active">Profile</a>
+                </nav>
+            </div>
+
+            <!-- Logout Link -->
+            <div class="sidebar-bottom">
+                <a href="login.html" class="nav-item logout">Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Page Header -->
+            <div class="welcome-header">
+                <h1>Profile</h1>
+                <p class="overview-text">Manage your account information and settings</p>
+            </div>
+
+            <!-- Account Information Section -->
+            <section class="profile-card">
+                <h3 class="section-title">Account Information</h3>
+                
+                <div class="user-info-wrapper">
+                    <!-- User Avatar -->
+                    <div class="avatar-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+
+                    <!-- User Details -->
+                    <div class="user-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value" id="user-name-display">John Doe</span>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value" id="user-email-display">johndoe@example.com</span>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="detail-label">Member Since:</span>
+                            <span class="detail-value" id="user-registered-date">January 15, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account Actions Section -->
+            <section class="profile-card">
+                <h3 class="section-title">Account Actions</h3>
+
+                <div class="actions-list">
+                    <!-- Edit Name -->
+                    <button class="action-item-btn">
+                        <span class="action-icon">✏️</span>
+                        <span>Edit Name</span>
+                    </button>
+
+                    <!-- Change Password -->
+                    <button class="action-item-btn">
+                        <span class="action-icon">🔒</span>
+                        <span>Change Password</span>
+                    </button>
+
+                    <!-- Logout -->
+                    <a href="login.html" class="action-item-btn action-logout">
+                        <span class="action-icon">🚪</span>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+</div>
+<script src="js/profile.js"></script>
+</body>
+
+</html>

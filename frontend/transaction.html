@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Finance App</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/transaction.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <div class="logo"></div>
+                    <h2>FinanceApp</h2>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="dashboard.html" class="nav-item">Dashboard</a>
+                    <a href="transaction.html" class="nav-item active">Transactions</a>
+                    <a href="profile.html" class="nav-item">Profile</a>
+                    
+                    <!-- Sidebar Add Action Links -->
+<a href="#" id="nav-add-income" class="nav-item nav-add-income">+ Add Income</a>
+<a href="#" id="nav-add-expense" class="nav-item nav-add-expense">- Add Expense</a>
+                </nav>
+            </div>
+
+            <!-- Logout Link -->
+            <div class="sidebar-bottom">
+                <a href="login.html" class="nav-item logout">Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Page Title Header -->
+            <div class="welcome-header">
+                <h1>Transactions</h1>
+                <p class="overview-text">View and manage all your transactions</p>
+            </div>
+
+            <!-- Filters & Search Bar Section -->
+            <div class="top-bar">
+                <div class="filter-group">
+                    <!-- Type Filter -->
+                    <div class="filter-item">
+                        <label for="filter-type">Type:</label>
+                        <select id="filter-type" class="filter-select">
+                            <option value="all">All</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-item">
+                        <label for="filter-category">Category:</label>
+                        <select id="filter-category" class="filter-select">
+                            <option value="all">All</option>
+                            <option value="food">Food</option>
+                            <option value="transport">Transport</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="medical">Medical</option>
+                            <option value="education">Education</option>
+                            <option value="salary">Salary</option>
+                            <option value="scholarship">Scholarship</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search by description...">
+                </div>
+            </div>
+
+            <!-- Transactions Table -->
+            <section class="transactions-section">
+                <div class="table-container">
+                    <table class="transactions-table">
+                        <thead class="table-header">
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transaction-rows">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Bar -->
+                <div class="pagination-container">
+                    <button class="page-btn page-nav">&laquo; Prev</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <button class="page-btn page-nav">Next &raquo;</button>
+                </div>
+            </section>
+
+            <!-- Bottom Tip Banner -->
+            <div class="tip-box">
+                <div class="tip-icon">💡</div>
+                <p>Showing recent transactions. Use filters to find exactly what you need.</p>
+            </div>
+
+        </main>
+</div>
+
+<div id="transaction-modal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2>Add Transaction</h2>
+
+        <form id="transaction-form">
+
+            <div class="input-group">
+                <label for="category">Category</label>
+
+                <select id="category">
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Medical">Medical</option>
+                    <option value="Education">Education</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Scholarship">Scholarship</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="description">Description</label>
+
+                <input
+                    type="text"
+                    id="description"
+                    placeholder="Enter description"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="amount">Amount</label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter amount"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="date">Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                >
+            </div>
+
+            <button type="button" id="cancel-btn">
+    Cancel
+</button>
+
+            <button type="submit" id="save-transaction">
+                Save Transaction
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<script src="js/transaction.js"></script>
+</body>
+
+</html>

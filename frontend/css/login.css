@@ -1,0 +1,122 @@
+/* 1. Global Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #15803d, #052e16);
+    padding: 20px;
+}
+
+/* 2. Main Card Container */
+.wholepage {
+    background: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    padding: 36px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 3. Logo created purely with CSS */
+.logo {
+    width: 70px;
+    height: 70px;
+    background-color: #10b981;
+    border-radius: 50%;
+    margin: 0 auto 18px auto;
+    
+    /* Clean vector icon loaded directly inside CSS */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H3v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3z"/><path d="M16 12h5v4h-5z"/><path d="M12 7V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v3"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+}
+
+/* 4. Title & Subtitle */
+.title h2 {
+    color: #111827;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.title span {
+    display: block;
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+/* 5. Input Fields */
+.input-group {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1px;
+}
+
+.input-group input {
+    width: 93%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 30px;
+    outline: none;
+    color: #111827;
+    transition: border-color 0.2s ease;
+    margin-top: 10px;
+}
+
+.input-group input:focus {
+    border-color: #10b981;
+}
+
+/* 6. Login Button */
+.create-btn button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transition: opacity 0.2s ease;
+}
+
+.create-btn button:hover {
+    opacity: 0.95;
+}
+
+/* 7. Bottom Paragraphs & Links */
+p {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+a.sign-in {
+    color: #059669;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a.sign-in:hover {
+    text-decoration: underline;
+}
