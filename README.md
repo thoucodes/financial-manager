@@ -1,338 +1,79 @@
-# financial-manager
+# Financial Management App
 
-A modern Full Stack Personal Finance Manager built using the **MERN Stack**. MoneyTrack helps users track their income and expenses, monitor their financial balance, and manage transactions through a clean and intuitive interface.
+A simple personal finance tracker to manage income, expenses, and view financial summaries. Built with a vanilla JavaScript frontend and a Node.js/Express backend using MongoDB.
 
----
+## Features
 
-## 📖 Overview
+- User registration and login (JWT-based authentication)
+- Add income and expense transactions with categories
+- Dashboard with total balance, income, and expense summary
+- Filter transactions by year or month
+- Full transactions page with search, filter, edit, delete, and pagination
+- Profile page to view account info, edit name, and change password
 
-MoneyTrack is designed to provide users with a simple and organized way to manage their personal finances. Users can create an account, securely log in, record income and expenses, and view their financial summary based on different time periods.
+## Tech Stack
 
-The application focuses on simplicity, performance, and a modern user experience while demonstrating the core concepts of full-stack web development.
+**Backend:** Node.js, Express, MongoDB (Mongoose), JWT, bcrypt
+**Frontend:** HTML, CSS, JavaScript (no framework)
 
----
-
-## ✨ Features
-
-### 👤 User Authentication
-- User Registration
-- Secure Login
-- Password Hashing
-- JWT Authentication
-- Protected Routes
-
----
-
-### 📊 Dashboard
-
-- Display user's name
-- Total Balance
-- Total Income
-- Total Expense
-
-#### Time Filter
-
-View financial summary for:
-
-- All Time
-- Monthly
-- Yearly
-
-The dashboard updates automatically whenever the selected filter changes.
-
----
-
-### 💵 Transactions
-
-Manage all financial transactions.
-
-Each transaction contains:
-
-- Date
-- Category
-- Description
-- Type (Income / Expense)
-- Amount
-
----
-
-### ➕ Add Transactions
-
-Users can:
-
-- Add Income
-- Add Expense
-
----
-
-### ✏️ Edit Transactions
-
-Users can edit:
-
-- Amount
-- Category
-- Description
-- Date
-- Transaction Type
-
----
-
-### 🗑 Delete Transactions
-
-Delete unwanted transactions with confirmation.
-
----
-
-### 🔍 Transaction Filters
-
-Filter transactions by:
-
-- Type
-  - All
-  - Income
-  - Expense
-
-- Category
-  - All Categories
-
----
-
-### 📄 Pagination
-
-Transactions are displayed page by page for better performance and user experience.
-
----
-
-### 👤 Profile
-
-- View Profile Information
-- Edit Name
-- Change Password
-- Logout
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-
-- React.js
-- React Router
-- Axios
-- CSS
-
-### Backend
-
-- Node.js
-- Express.js
-
-### Database
-
-- MongoDB
-- Mongoose
-
-### Authentication
-
-- JSON Web Token (JWT)
-- bcrypt
-
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```
-financial-manager
-│
-├── client
-│   ├── src
-│   ├── public
+financial-management/
+├── backend/
+│   ├── controllers/       # Request handling logic
+│   ├── middleware/         # Auth middleware
+│   ├── models/             # Mongoose schemas
+│   ├── routes/             # API route definitions
+│   ├── server.js           # App entry point
 │   └── package.json
-│
-├── server
-│   ├── controllers
-│   ├── middleware
-│   ├── models
-│   ├── routes
-│   ├── config
-│   └── server.js
-│
-└── README.md
+└── frontend/
+    ├── css/                # Stylesheets per page
+    ├── js/                 # Scripts per page
+    └── *.html              # Pages (login, registration, dashboard, transaction, profile)
 ```
 
----
+## Setup Instructions
 
-## 🚀 Pages
-
-### Register
-
-Create a new account.
-
----
-
-### Login
-
-Secure user authentication.
-
----
-
-### Dashboard
-
-Displays:
-
-- User Name
-- Balance
-- Income
-- Expense
-
-Allows:
-
-- Add Income
-- Add Expense
-
-Shows recent transactions.
-
----
-
-### Transactions
-
-View all transactions.
-
-Supports:
-
-- Filter by Type
-- Filter by Category
-- Pagination
-- Edit
-- Delete
-
----
-
-### Profile
-
-Manage account information.
-
----
-
-## 🗄 Database Schema
-
-### User
-
-```
-Name
-Email
-Password (Hashed)
-Created At
-Updated At
-```
-
-### Transaction
-
-```
-User ID
-Type
-Category
-Description
-Amount
-Date
-Created At
-Updated At
-```
-
----
-
-## 🔒 Security
-
-- Password hashing using bcrypt
-- JWT Authentication
-- Protected API Routes
-- User-specific transaction access
-
----
-
-## 🎯 Future Improvements
-
-- Search Transactions
-- Date Range Filter
-- Charts & Analytics
-- Export to PDF
-- CSV Export
-- Dark Mode
-- Email Verification
-- Forgot Password
-- Profile Picture
-- Google Authentication
-- Two-Factor Authentication (2FA)
-- Custom Categories
-- Budget Planning
-- Savings Goals
-- Recurring Transactions
-- Multi-Currency Support
-
----
-
-## 📸 Screenshots
-
-> Add screenshots here after completing the UI.
-
-- Register
-- Login
-- Dashboard
-- Transactions
-- Profile
-
----
-
-## ⚙️ Installation
-
-### Clone the repository
-
+### 1. Install dependencies
 ```bash
-git clone https://github.com/your-username/MoneyTrack.git
-```
-
-### Frontend
-
-```bash
-cd client
+cd backend
 npm install
-npm start
 ```
 
-### Backend
+### 2. Configure environment variables
+Create a `.env` file inside the `backend` folder with:
+```
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+PORT=5500
+```
 
+### 3. Run the backend
 ```bash
-cd server
-npm install
 npm run dev
 ```
+Server runs at `http://localhost:5500`
 
----
+### 4. Open the frontend
+Open `frontend/login.html` in your browser (or serve it with a local server / Live Server extension).
 
-## 📌 Learning Objectives
+## API Endpoints
 
-This project demonstrates:
+| Method | Endpoint | Description |
+|--------|----------|--------------|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | Login and receive JWT token |
+| GET | `/api/auth/me` | Get logged-in user's info |
+| PUT | `/api/auth/update-name` | Update user's name |
+| PUT | `/api/auth/change-password` | Change user's password |
+| POST | `/api/transactions/create` | Create a transaction |
+| GET | `/api/transactions` | Get all transactions for logged-in user |
+| PUT | `/api/transactions/:id` | Update a transaction |
+| DELETE | `/api/transactions/:id` | Delete a transaction |
 
-- Full Stack Web Development
-- REST API Development
-- Authentication & Authorization
-- MongoDB Database Design
-- CRUD Operations
-- React State Management
-- API Integration
-- Pagination
-- Protected Routes
-- Responsive UI Design
+## Notes
 
----
-
-## 👨‍💻 Author
-
-**Mayanglambam Thoungamba Meitei**
-
-Built as a full-stack portfolio project to practice MERN Stack development and modern web application architecture.
-
----
-
-## 📄 License
-
-This project is open source and available under the **MIT License**.
+- Passwords are hashed using bcrypt before storing.
+- Routes other than register/login require a valid JWT token sent in the `Authorization` header.
+- `.env` is excluded from version control via `.gitignore`.
