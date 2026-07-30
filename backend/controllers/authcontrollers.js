@@ -31,6 +31,7 @@ export const register = async (req, res) => {
             success: true,
         });
     } catch (error) {
+        console.error("REGISTRATION ERROR:", error);
         res.status(500).json({
             message: "Error registering user",
             success: false,
@@ -74,6 +75,7 @@ const token = jwt.sign(
         });
 
     } catch (error) {
+        console.error("LOGIN ERROR:", error);
         res.status(500).json({
             message: "Error logging in user",
             success: false,
