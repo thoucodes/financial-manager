@@ -15,7 +15,7 @@ const changePasswordBtn = document.querySelectorAll(".action-item-btn")[1];
 // Load and display user info
 async function loadUser() {
     try {
-        const response = await fetch("http://localhost:5500/api/auth/me", {
+        const response = await fetch("https://financial-manager-ulhs.onrender.com/api/auth/me", {
             method: "GET",
             headers: {
                 "Authorization": token,
@@ -50,7 +50,7 @@ editNameBtn.addEventListener("click", async () => {
     if (!newName) return;
 
     try {
-        const response = await fetch("http://localhost:5500/api/auth/update-name", {
+        const response = await fetch("https://financial-manager-ulhs.onrender.com/api/auth/update-name", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -81,7 +81,7 @@ changePasswordBtn.addEventListener("click", async () => {
     if (!newPassword) return;
 
     try {
-        const response = await fetch("http://localhost:5500/api/auth/change-password", {
+        const response = await fetch("https://financial-manager-ulhs.onrender.com/api/auth/change-password", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

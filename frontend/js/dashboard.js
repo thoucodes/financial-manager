@@ -30,7 +30,7 @@ function showToast(message) {
 
 async function loadUser() {
     try {
-        const response = await fetch("http://localhost:5500/api/auth/me", {
+        const response = await fetch("https://financial-manager-ulhs.onrender.com/api/auth/me", {
             method: "GET",
             headers: { "Authorization": token },
         });
@@ -67,7 +67,7 @@ function populateYearOptions(createdAt) {
 
 async function loadTransactions() {
     try {
-        const response = await fetch("http://localhost:5500/api/transactions", {
+        const response = await fetch("https://financial-manager-ulhs.onrender.com/api/transactions", {
             method: "GET",
             headers: { "Authorization": token },
         });
@@ -210,7 +210,7 @@ transactionForm.addEventListener("submit", async (event) => {
     };
 
     try {
-        const response = await fetch("http://localhost:5500/api/transactions/create", {
+        const response = await fetch("https://financial-manager-ulhs.onrender.com/api/transactions/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

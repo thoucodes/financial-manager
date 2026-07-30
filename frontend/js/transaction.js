@@ -33,7 +33,7 @@ function getBadgeClass(category) {
 
 async function loadTransactions() {
     try {
-        const response = await fetch("http://localhost:5500/api/transactions", {
+        const response = await fetch("https://financial-manager-ulhs.onrender.com/api/transactions", {
             method: "GET",
             headers: { "Authorization": token },
         });
@@ -137,7 +137,7 @@ transactionRows.addEventListener("click", async (event) => {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`http://localhost:5500/api/transactions/${id}`, {
+            const response = await fetch(`https://financial-manager-ulhs.onrender.com/api/transactions/${id}`, {
                 method: "DELETE",
                 headers: { "Authorization": token },
             });
@@ -167,7 +167,7 @@ transactionRows.addEventListener("click", async (event) => {
         if (!confirmUpdate) return;
 
         try {
-            const response = await fetch(`http://localhost:5500/api/transactions/${id}`, {
+            const response = await fetch(`https://financial-manager-ulhs.onrender.com/api/transactions/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -261,7 +261,7 @@ transactionForm.addEventListener("submit", async (event) => {
     };
 
     try {
-        const response = await fetch("http://localhost:5500/api/transactions/create", {
+        const response = await fetch("https://financial-manager-ulhs.onrender.com/api/transactions/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
