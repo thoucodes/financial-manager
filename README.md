@@ -2,6 +2,10 @@
 
 A simple personal finance tracker to manage income, expenses, and view financial summaries. Built with a vanilla JavaScript frontend and a Node.js/Express backend using MongoDB.
 
+## Live Demo
+
+[**View Financial Management App →**](https://thoufinancialmanager.netlify.app)
+
 ## Features
 
 - User registration and login (JWT-based authentication)
